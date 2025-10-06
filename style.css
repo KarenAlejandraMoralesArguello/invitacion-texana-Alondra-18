@@ -1,0 +1,46 @@
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: url('assets/fondo-madera.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #FFD700;
+    text-shadow: 2px 2px #000;
+}
+
+.hero h2, .hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.hero img {
+    margin-top: 20px;
+    width: 250px;
+    border: 5px solid #fff;
+    border-radius: 20px;
+}
+
+.details, .countdown, .rsvp {
+    margin: 30px 0;
+}
+
+.rsvp a {
+    background-color: green;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.map iframe {
+    border-radius: 15px;
+    margin-top: 20px;
+}
