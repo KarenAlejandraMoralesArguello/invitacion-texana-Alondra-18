@@ -1,20 +1,21 @@
 
 const countdown = document.getElementById("countdown");
-const eventDate = new Date("Oct 10, 2025 20:00:00").getTime();
+const targetDate = new Date("Oct 10, 2025 20:00:00").getTime();
 
-const timer = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+const interval = setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  if (diff <= 0) {
+    clearInterval(interval);
+    countdown.innerText = "¡La fiesta ha comenzado!";
+    return;
+  }
 
-    countdown.innerHTML = `⏳ Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    if (distance < 0) {
-        clearInterval(timer);
-        countdown.innerHTML = "¡La fiesta ha comenzado! 🎉";
-    }
+  countdown.innerText = `⏳ Faltan ${days}d ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
